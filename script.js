@@ -22,16 +22,14 @@ class Produit {
     }
 }
 
-class Stock extends Produit{
+class Stock{
     #boutique;
     #lieu;
-    liste = [];
-    constructor(boutique, lieu, liste) {
-        // super(id, nom, prix, statu);, id, nom, prix, statu
-        super();
+    liste;
+    constructor(boutique, lieu) {
         this.boutique = boutique;
         this.lieu = lieu;
-        this.liste.push(monProduit);
+        this.liste = tout;
     }
     
     getBoutique () {
@@ -45,12 +43,22 @@ class Stock extends Produit{
     }
 }
 
-
+// Pour ajouter des produits
 let monProduit = new Produit("salade", 1000);
-// console.log(monProduit);
+let monProduit1 = new Produit("tomate", 500);
+let monProduit3 = new Produit("banane", 500);
+let tout = [monProduit, monProduit1, monProduit3];
 
-let monProduit2 = new Stock("mom", "moderne", `${monProduit}`);
-console.log(monProduit2.getBoutique(), monProduit2.getLieu(), monProduit2.getListe());
+// Pour rechercher un produit
+let recherche = tout.find((element) => element = monProduit);
 
-// console.log(monProduit2);
+// Pour supprimer un produit
+let suppression = tout.pop();
+
+// Pour modifier le status d'un produit
+let modification = monProduit.statu = "pas en stock";
+
+
+let ajouterStock = new Stock("mom", "moderne");
+console.log(ajouterStock);
 
